@@ -1,0 +1,65 @@
+import.java.util.*;
+import.java.util.scanner;
+
+ 
+public class FlashCardBuilder {
+    private Scanner scan = new Scanner(System.in);
+    public String term;
+    public String definition;
+ 
+    //intializes variables
+    public FlashCardBuilder() {
+        term = "";
+        definition = "";
+    }
+    
+    class flashCard{  
+        String term;  
+        String definition;
+        }
+        
+    public void intializeFlashCard(String term, String definition) {
+        System.out.println("Enter Your Term Here: ");
+        term = scan.nextLine();
+        System.out.println("Enter Your Definition Here: ");
+        definition = scan.nextLine(); 
+    }
+    
+    //
+    public FlashCardBuilder(String term, String definition) {
+        this.term = term;
+        this.definition = definition;
+    }
+    
+   
+    //returns the term
+    public String getTerm() {
+        return term;
+    }
+   
+    //returns the definition
+    public String getDefintion() {
+        return defnition;
+    }
+   
+    public void setTerm(String term){
+        this.term = term;
+    }
+   
+    public void setDefinition(String definition){
+        this.definition = definition;
+    }
+   
+    @Override
+    public String toString() {
+        return term + "\t" + definition;
+    }
+    
+    
+    Stack<String> stack = new Stack<String>();
+    stack.push(term);
+    stack.push(definition);
+    
+    int i = stack.pop();
+    
+    
