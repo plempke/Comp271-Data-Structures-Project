@@ -16,6 +16,7 @@ public class Main {
         do {
             switch (switchInt) {
                 case 1: System.out.println("1");
+                    Deck newDeck = new Deck ();
                     //Create a deck
                     break;
 
@@ -28,6 +29,14 @@ public class Main {
                     break;
 
                 case 4: System.out.println("4");
+                    System.out.println("Are you sure you wish to delete your Flashcards?");
+                    System.out.println("type 'n' to keep your flashcards, type anything else to delete them");
+                    if(kb.nextLine()=='n'){
+                        break;
+                    }
+                    else{
+                        newDeck = null;
+                    }
                     //Delete a deck
                     break;
 
