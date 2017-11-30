@@ -13,7 +13,18 @@ public class Deck {
     public Deck(){
         System.out.println("enter an integer deck size:");
         deckSize = kbDeck.nextInt();
+        kbDeck.nextLine();
         FlashCard[] fcArray = new FlashCard[deckSize];
+
+        for (int i=0; i<deckSize; i++) {
+            System.out.println("\nCard " + (i+1) + "\n");
+            System.out.println("enter the top side of the card:");
+            quest = kbDeck.nextLine();
+            System.out.println("enter the bottom side of the card:");
+            ans = kbDeck.nextLine();
+            fcArray[i] = new FlashCard(quest, ans);
+            myDeck.add(fcArray[i]);
+        }
     }
 
 }

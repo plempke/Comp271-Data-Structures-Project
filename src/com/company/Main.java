@@ -22,22 +22,26 @@ public class Main {
 
                 case 2: System.out.println("2");
                     //Study Deck by question
+
                     break;
 
                 case 3: System.out.println("3");
                     //Study Deck by answer
+
                     break;
 
                 case 4: System.out.println("4");
+                    //Delete a deck
+                    //Probably more useful if we implement multiple deck functionality
                     System.out.println("Are you sure you wish to delete your Flashcards?");
                     System.out.println("type 'n' to keep your flashcards, type anything else to delete them");
-                    if(kb.nextLine()=='n'){
+                    kb.nextLine();
+                    if(kb.nextLine()=="n"){
                         break;
                     }
                     else{
                         newDeck = null;
                     }
-                    //Delete a deck
                     break;
 
                 case 5: break; //Ends Program
