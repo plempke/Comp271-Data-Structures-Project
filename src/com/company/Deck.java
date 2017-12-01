@@ -27,6 +27,40 @@ public class Deck {
         }
     }
 
+
+    // The simple bullshit version of Stduy
+
+    public void studyByQuestion(){
+
+        FlashCard temp;
+
+        for (int i=0; i<deckSize; i++) {
+            temp = myDeck.poll();
+            System.out.println("Top:");
+            System.out.println(temp.question);
+            kbDeck.nextLine();
+            System.out.println("Bottom:");
+            System.out.println(temp.answer + "\n");
+
+        }
+    }
+
+    public void studyByAnswer(){
+
+        FlashCard temp;
+
+        for (int i=0; i<deckSize; i++) {
+            temp = myDeck.poll();
+            System.out.println("Bottom:");
+            System.out.println(temp.answer);
+            kbDeck.nextLine();
+            System.out.println("Top:");
+            System.out.println(temp.question+ "\n");
+
+        }
+    }
+
+
 }
 
 

@@ -9,6 +9,7 @@ public class Main {
         int switchInt = 1;
         int userInput = 0;
         Scanner kb = new Scanner(System.in);
+        Deck newDeck = null;
 
         System.out.println("Welcome to this Flashcard Application!");
         System.out.println("Start by creating a deck.");
@@ -16,18 +17,30 @@ public class Main {
         do {
             switch (switchInt) {
                 case 1: System.out.println("1");
-                    Deck newDeck = new Deck ();
                     //Create a deck
+                    newDeck = new Deck ();
                     break;
 
                 case 2: System.out.println("2");
                     //Study Deck by question
-
+                    if (newDeck == null) {
+                        System.out.println("No deck is stored");
+                        break;
+                    }
+                    else {
+                        newDeck.studyByQuestion();
+                    }
                     break;
 
                 case 3: System.out.println("3");
                     //Study Deck by answer
-
+                    if (newDeck == null) {
+                        System.out.println("No deck is stored");
+                        break;
+                    }
+                    else {
+                        newDeck.studyByAnswer();
+                    }
                     break;
 
                 case 4: System.out.println("4");
