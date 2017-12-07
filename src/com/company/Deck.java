@@ -43,6 +43,7 @@ public class Deck {
             kbDeck.nextLine();
             System.out.println("Bottom:");
             System.out.println(temp.answer + "\n");
+            myDeck.add(temp);
 
         }
     }
@@ -58,7 +59,7 @@ public class Deck {
             kbDeck.nextLine();
             System.out.println("Top:");
             System.out.println(temp.question+ "\n");
-
+            myDeck.add(temp);
         }
     }
 

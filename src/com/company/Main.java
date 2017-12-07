@@ -8,14 +8,14 @@ public class Main {
 
         int switchInt = 1;
         int userInput = 0;
-        String confirm;
+        String userConfirm;
         Scanner kb = new Scanner(System.in);
         Deck newDeck = null;
         List<Deck> deckList = new ArrayList<Deck>();
         String nameTemp;
 
         System.out.println("Welcome to this Flashcard Application!");
-        System.out.println("StartuserInput by creating a deck.");
+        System.out.println("Start by creating a deck.");
 
         do {
             switch (switchInt) {
@@ -45,7 +45,7 @@ public class Main {
 
                 case 3: System.out.println("3");
                     //Study Deck by answer
-                    if (newDeck == null) {
+                    if (deckList.size()==0) {
                         System.out.println("No deck is stored");
                         break;
                     }
@@ -67,9 +67,15 @@ public class Main {
                         System.out.println((i+1) + ". " + deckList.get(i).deckName);
                     }
                     userInput = kb.nextInt();
-                    System.out.println("Are you sure you would like to delete " + deckList.get(userInput-1).deckName + "? (Y/N)");
-                    if (kb.next()=="y"||kb.next()=="Y") {
-                        deckList.remove(userInput - 1);
+                    kb.nextLine();
+                    System.out.println("Type \"n\" to keep " + deckList.get(userInput-1).deckName + ".");
+                    if (kb.nextLine()=="n") { // WHY IT NO WORK PHIL HELP ME
+                        System.out.println("DECK KEPT");
+                        break;
+                    }
+                    else{
+                        deckList.remove((userInput - 1));
+                        System.out.println("Deck deleted.");
                     }
                     break;
 
@@ -87,6 +93,7 @@ public class Main {
             System.out.println("5. Exit Program.\n");
 
             switchInt = kb.nextInt();
+            kb.nextLine();
 
         } while (switchInt != 5);
 
