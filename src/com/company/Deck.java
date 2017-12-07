@@ -6,12 +6,14 @@ public class Deck {
 
     Scanner kbDeck = new Scanner(System.in);
     int deckSize;
+    String deckName;
     String quest;
     String ans;
     Queue<FlashCard> myDeck = new LinkedList<FlashCard>();
 
-    public Deck(){
-        System.out.println("enter an integer deck size:");
+    public Deck(String name){
+        deckName = name;
+        System.out.println("Enter an integer deck size:");
         deckSize = kbDeck.nextInt();
         kbDeck.nextLine();
         FlashCard[] fcArray = new FlashCard[deckSize];

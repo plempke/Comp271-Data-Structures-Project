@@ -8,27 +8,38 @@ public class Main {
 
         int switchInt = 1;
         int userInput = 0;
+        String confirm;
         Scanner kb = new Scanner(System.in);
         Deck newDeck = null;
+        List<Deck> deckList = new ArrayList<Deck>(String);
+        String nameTemp;
 
         System.out.println("Welcome to this Flashcard Application!");
-        System.out.println("Start by creating a deck.");
+        System.out.println("StartuserInput by creating a deck.");
 
         do {
             switch (switchInt) {
                 case 1: System.out.println("1");
                     //Create a deck
-                    newDeck = new Deck ();
+                    System.out.println("Enter deck name:");
+                    nameTemp = kb.nextLine();
+                    newDeck = new Deck (nameTemp);
+                    deckList.add(newDeck);
                     break;
 
                 case 2: System.out.println("2");
                     //Study Deck by question
-                    if (newDeck == null) {
+                    if (deckList.size()==0) {
                         System.out.println("No deck is stored");
                         break;
                     }
                     else {
-                        newDeck.studyByQuestion();
+                        System.out.println("Enter an integer to select a deck to study:\n");
+                        for (int i = 0; i<deckList.size(); i++) {
+                            System.out.println((i+1) + ". " + deckList.get(i).deckName);
+                        }
+                        userInput = kb.nextInt();
+                        deckList.get(userInput-1).studyByQuestion();
                     }
                     break;
 
@@ -39,21 +50,26 @@ public class Main {
                         break;
                     }
                     else {
-                        newDeck.studyByAnswer();
+                        System.out.println("Enter an integer to select a deck to study:\n");
+                        for (int i = 0; i<deckList.size(); i++) {
+                            System.out.println((i+1) + ". " + deckList.get(i).deckName);
+                        }
+                        userInput = kb.nextInt();
+                        deckList.get(userInput-1).studyByAnswer();
                     }
                     break;
 
                 case 4: System.out.println("4");
                     //Delete a deck
                     //Probably more useful if we implement multiple deck functionality
-                    System.out.println("Are you sure you wish to delete your Flashcards?");
-                    System.out.println("type 'n' to keep your flashcards, type anything else to delete them");
-                    kb.nextLine();
-                    if(kb.nextLine()=="n"){
-                        break;
+                    System.out.println("Enter an integer to choose a deck to delete:\n");
+                    for (int i = 0; i<deckList.size(); i++) {
+                        System.out.println((i+1) + ". " + deckList.get(i).deckName);
                     }
-                    else{
-                        newDeck = null;
+                    userInput = kb.nextInt();
+                    System.out.println("Are you sure you would like to delete " + deckList.get(userInput-1).deckName + "? (Y/N)");
+                    if (kb.next()=="y"||kb.next()=="Y") {
+                        deckList.remove(userInput - 1);
                     }
                     break;
 
