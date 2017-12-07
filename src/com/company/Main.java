@@ -11,7 +11,7 @@ public class Main {
         String confirm;
         Scanner kb = new Scanner(System.in);
         Deck newDeck = null;
-        List<Deck> deckList = new ArrayList<Deck>(String);
+        List<Deck> deckList = new ArrayList<Deck>();
         String nameTemp;
 
         System.out.println("Welcome to this Flashcard Application!");
