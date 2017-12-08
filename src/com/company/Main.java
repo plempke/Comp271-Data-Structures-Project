@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args) {
 
         int switchInt = 1;
-        int userInput = 0;
+        int userInput;
         String userConfirm;
         Scanner kb = new Scanner(System.in);
-        Deck newDeck = null;
+        Deck newDeck;
         List<Deck> deckList = new ArrayList<Deck>();
         String nameTemp;
 
@@ -39,6 +39,10 @@ public class Main {
                             System.out.println((i+1) + ". " + deckList.get(i).deckName);
                         }
                         userInput = kb.nextInt();
+                        if (userInput > deckList.size()) {
+                            System.out.println("Selection not a valid deck.");
+                            break;
+                        }
                         deckList.get(userInput-1).studyByQuestion();
                     }
                     break;
@@ -55,6 +59,10 @@ public class Main {
                             System.out.println((i+1) + ". " + deckList.get(i).deckName);
                         }
                         userInput = kb.nextInt();
+                        if (userInput > deckList.size()) {
+                            System.out.println("Selection not a valid deck.");
+                            break;
+                        }
                         deckList.get(userInput-1).studyByAnswer();
                     }
                     break;
@@ -68,14 +76,18 @@ public class Main {
                     }
                     userInput = kb.nextInt();
                     kb.nextLine();
-                    System.out.println("Type \"n\" to keep " + deckList.get(userInput-1).deckName + ".");
-                    if (kb.nextLine()=="n") { // WHY IT NO WORK PHIL HELP ME
-                        System.out.println("DECK KEPT");
+                    if (userInput > deckList.size()) {
+                        System.out.println("Selection not a valid deck.");
                         break;
                     }
-                    else{
+                    System.out.println("Are you sure you wish to delete " + deckList.get(userInput-1).deckName + "? (Y/N)");
+                    userConfirm = kb.nextLine();
+                    if (userConfirm.equalsIgnoreCase("y")) { // WHY IT NO WORK PHIL HELP ME
                         deckList.remove((userInput - 1));
-                        System.out.println("Deck deleted.");
+                        System.out.println("Deck deleted");
+                    }
+                    else{
+                        System.out.println("Deck kept");
                     }
                     break;
 
