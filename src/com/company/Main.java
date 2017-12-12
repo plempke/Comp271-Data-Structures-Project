@@ -97,6 +97,7 @@ public class Main {
                                         deckList.remove((userInput - 1));   // deleting the deck stored in selectedDeck does not actually remove it from the list as selectedDeck is just copy of the deck from the list
                                                                             // one benefit of using a dummy deck for these operations is that the original order is stored in the event that the user wants to return to the original deck order after shuffling.
                                         System.out.println("Deck deleted.");    //debug purposes
+                                        secondSwitchInt = 5;
                                     }
                                     else {
                                         System.out.println("Deck not deleted.");    //debug purposes
