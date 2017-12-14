@@ -6,15 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int firstSwitchInt = 1;                     // create, select, end.
-        int secondSwitchInt;                        // Study by question/answer, shuffle, delete.
-        int userInput;                              // used for deck selection
-        String userConfirm;                         // Y/N string for confirmation
-        Scanner kb = new Scanner(System.in);        // Keyboard
-        Deck newDeck;                               // temporary storage for deck creation
-        Deck selectedDeck;                          // storage for selected deck sub-menu
-        List<Deck> deckList = new ArrayList<Deck>();   // list of decks
-        String nameTemp;                            // temporary string for the name of the new deck in deck creation
+        int firstSwitchInt = 1;                         // create, select, end.
+        int secondSwitchInt;                            // Study by question/answer, shuffle, delete.
+        int userInput;                                  // used for deck selection
+        String userConfirm;                             // Y/N string for confirmation
+        Scanner kb = new Scanner(System.in);            // Keyboard
+        Deck newDeck;                                   // temporary storage for deck creation
+        Deck selectedDeck;                              // storage for selected deck sub-menu
+        List<Deck> deckList = new ArrayList<Deck>();    // list of decks
+        String nameTemp;                                // temporary string for the name of the new deck in deck creation
 
 
         System.out.println("Welcome to this Flashcard Application!");
