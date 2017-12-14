@@ -4,17 +4,17 @@ import java.util.*;
 
 public class Deck {
 
-    Scanner kbDeck = new Scanner(System.in);        // scanner for this class
-    int deckSize;                                   // integer for the number of cards in the deck
-    // this integer is not actually the number of cards in the deck but is equal to it instead.
-    // basically, when the number of cards in the deck changes from the pop method, this number does not actually change and allows the for loops to run correctly
-    String deckName;                                // name of the deck
-    String quest;                                   // top side of the deck (question)
-    String ans;                                     // bottom side of the deck (answer)
+    Scanner kbDeck = new Scanner(System.in);                // scanner for this class
+    int deckSize;                                           // integer for the number of cards in the deck
+                                                            // this integer is not actually the number of cards in the deck but is equal to it instead.
+                                                            // basically, when the number of cards in the deck changes from the pop method, this number does not actually change and allows the for loops to run correctly
+    String deckName;                                        // name of the deck
+    String quest;                                           // top side of the deck (question)
+    String ans;                                             // bottom side of the deck (answer)
     Queue<FlashCard> myDeck = new LinkedList<FlashCard>();  // queue to display cards in the order they are entered
 
 
-    public Deck(String name) {   // constructor using the argument from line 33 in Main.java
+    public Deck(String name) {    // constructor using the argument from line 33 in Main.java
         deckName = name;
         System.out.println("Enter an integer deck size:");  // rather than ask the user if they want to enter a new card every time, we ask ahead of time what the deck size for faster, more streamlined deck creation
         deckSize = kbDeck.nextInt();
@@ -92,30 +92,6 @@ public class Deck {
         }
     }
 
-
-    /*
-        Scanner kb = new Scanner(System.in);
-        int cardTotal = 0;
-        String quest;
-        String ans;
-        Queue<FlashCard> myDeck = new LinkedList<FlashCard>();
-
-        System.out.println("enter a card amount:");
-        cardTotal = kb.nextInt();
-        kb.nextLine();
-        FlashCard[] fcArray = new FlashCard[cardTotal];
-
-        for(int i=0; i<cardTotal; i++){
-            System.out.println("\nCard " + (i+1) + "\n");
-            System.out.println("enter the top side of the card:");
-            quest = kb.nextLine();
-            System.out.println("enter the bottom side of the card");
-            ans = kb.nextLine();
-            fcArray[i] = new FlashCard(quest, ans);
-            myDeck.add(fcArray[i]);
-        }
-    }
-    */
 
 
     class FlashCard {       // very simple custom object that just holds two strings representing two sides of a flashcard
